@@ -213,3 +213,36 @@ a {
 a:hover {
   color: rgb(13, 133, 185);
 }
+
+@media screen and (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr;
+    width: 95%;
+  }
+
+  .left-side {
+    height: 200px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .right-side {
+    padding: 30px 24px;
+    width: 100%;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
