@@ -1,0 +1,519 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    position: relative;
+    height: 400px;
+    background-image: url('foto/header.png'); /* ganti dengan gambar kamu */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.header-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('foto/header.png'); /* samakan dengan gambar header kamu */
+    background-size: cover;
+    background-position: center;
+    filter: blur(0px);
+    transition: filter 0.1s ease;
+    z-index: 0;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+.header h1 {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.konten-scroll {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+    padding: 40px 20px;
+    margin-top: -30px; /* naik sedikit agar terlihat menimpa */
+}
+
+.judul h2 {
+    color: #2a2a2a;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.deskripsi {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+.info-card {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 24px;
+    color: #2a2a2a;
+    border: 1px solid #ddd;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    border-color: black;
+}
+
+.info-card h3 {
+    margin: 0 0 10px 0;
+    color: #1e1e1e;
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.info-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.info-card a {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.info-card a:hover {
+    color: rgb(13, 133, 185);
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    color: lightblue;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+    font-weight: bold;
+    color: lightblue;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+#myTopnav {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: #333;
+    z-index: 1000;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+#userInfo {
+    float: left;
+    color: red;
+    padding: 14px 16px;
+    margin: 0;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#userInfo.sudah-login {
+    color: lightgreen;
+}
+
+#authArea {
+    float: right;
+    display: flex;
+    align-items: center;
+    padding: 8px 8px;
+}
+
+.nav-cta {
+    color: white;
+    background-color: transparent;
+    border: none;
+    padding: 8px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.nav-cta:hover {
+    color: lightblue;
+}
+
+/* Layout dua kolom: teks kiri, playground kanan */
+.koding-utama {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    border-radius: 20px 20px 0 0; /* lengkungan di atas */
+    padding: 40px 20px;
+    margin-top: -30px; /* naik sedikit menimpa header */
+    min-height: 100vh;
+}
+
+.cpp-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    align-items: start;
+}
+
+@media screen and (max-width: 768px) {
+    .cpp-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.kiri {
+    color: #2a2a2a;
+    font-size: 1rem;
+    line-height: 1.7;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    position: sticky;
+    top: 60px; /* agar teks tidak ketutup navbar sticky */
+}
+
+.kiri p {
+    margin: 0;
+}
+
+/* Hapus margin bawaan coding-section karena sudah diatur grid */
+.coding-section {
+    max-width: unset;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .koding-utama {
+        grid-template-columns: 1fr;
+    }
+
+    .kiri {
+        position: static;
+    }
+}
+
+/* Wrapper agar video responsif */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* rasio 16:9 */
+    height: 0;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.coding-section {
+  max-width: unset;
+  margin: 0;
+  padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.coding-section h2 {
+  color: #2a2a2a;
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+}
+
+.cpp-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.cpp-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+}
+
+.cpp-run-btn {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s;
+}
+
+.cpp-run-btn:hover { background-color: blue; color: white; }
+.cpp-run-btn:disabled { background-color: #555; cursor: not-allowed; }
+
+.cpp-clear-btn {
+  font-size: 13px;
+  padding: 8px 14px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cpp-clear-btn:hover { background-color: black; color: white; }
+
+.cpp-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.cpp-panel {
+  border: 1px solid #444;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cpp-panel-header {
+  padding: 8px 14px;
+  background-color: #2a2a2a;
+  border-bottom: 1px solid #444;
+  font-size: 12px;
+  font-weight: 600;
+  color: #aaa;
+}
+
+#cppEditor {
+  width: 100%;
+  height: 320px;
+  padding: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  border: none;
+  outline: none;
+  resize: none;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  tab-size: 2;
+}
+
+.cpp-stdin-panel {
+  margin-top: 12px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#cppStdin {
+  width: 100%;
+  height: 70px;
+  padding: 10px 14px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  border: none;
+  outline: none;
+  resize: none;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+}
+
+#cppOutput {
+  width: 100%;
+  height: 406px;
+  padding: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-y: auto;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.cpp-status-bar {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #777;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cpp-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.cpp-dot-green { background: #4ade80; }
+.cpp-dot-red   { background: #f87171; }
+.cpp-dot-yellow { background: #fbbf24; }
+
+.cpp-spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #555;
+  border-top-color: #04AA6D;
+  border-radius: 50%;
+  animation: cppSpin 0.7s linear infinite;
+  margin-right: 6px;
+}
+
+@keyframes cppSpin { to { transform: rotate(360deg); } }
+
+.cpp-out-error   { color: #f87171; }
+.cpp-out-success { color: #4ade80; }
+.cpp-out-muted   { color: #666; font-size: 12px; }
+
+@media screen and (max-width: 600px) {
+  .cpp-panels { grid-template-columns: 1fr; }
+  #cppEditor, #cppOutput { height: 220px; }
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #EBE1DD;
+    padding: 20px 40px;
+    border-top: 1px solid #f2f2f2;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    color: black;
+    font-size: 0.9rem;
+}
+
+.footer-left p {
+    margin: 0;
+}
+
+.footer-right {
+    width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #444;
+}
+
+.footer-right iframe {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .footer-right {
+        width: 100%;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login Form with Snow</title>
+  </head>
+  <body>
+    <div id="particles-js" class="snow"></div>
+
+    <main>
+      <div class="left-side"></div>
+
+      <div class="right-side">
+        <form id="loginForm">
+          <div class="btn-group">
+            <button class="btn">
+              <img class="logo" src="images/google-logo.png" alt="" />
+              <span>Masuk dengan Google</span>
+            </button>
+            <button class="btn">
+              <img class="logo" src="images/apple-logo.png" alt="" />
+              <span>Masuk dengan Apple</span>
+            </button>
+          </div>
+
+          <div class="or">ATAU</div>
+
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Masukkan Username" name="username" required />
+
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Masukkan Password"
+            name="password"
+            required />
+
+          <button type="submit" class="login-btn">Masuk</button>
+          <div id="alertBox" style="display:none; color:red; margin-top:10px; text-align: center;"></div>
+          <div class="links">
+            <a href="../index.html">Beranda</a>
+            <a href="register.html">Belum ada akun?</a>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.js"></script>
+    <script src="app.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>
