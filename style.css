@@ -6,7 +6,7 @@ html, body {
 .header{
     position: relative;
     height: 400px;
-    background-image: url('foto/header.png'); /* ganti dengan gambar kamu */
+    background-image: url('header.png'); /* ganti dengan gambar kamu */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -19,7 +19,7 @@ html, body {
 .header-bg {
     position: absolute;
     inset: 0;
-    background-image: url('foto/header.png'); /* samakan dengan gambar header kamu */
+    background-image: url('header.png'); /* samakan dengan gambar header kamu */
     background-size: cover;
     background-position: center;
     filter: blur(0px);
